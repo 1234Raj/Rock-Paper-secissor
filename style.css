@@ -1,0 +1,101 @@
+body{
+    background-color: rgb(18, 11, 24);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+h1{
+    text-align: center;
+     
+    font-size: xxx-large;
+    font-weight: bolder;
+    color:crimson;
+}
+
+#img1{
+    padding-top: 20px;
+    position: absolute;
+    top: 20%;
+    left: 25%;
+    transform: rotateY(180deg);
+}
+
+#img2{
+    padding-top: 20px;
+    position: absolute;
+    top: 20%;
+    left: 52%;
+}
+
+.btn1{
+    display: flex;
+    flex-direction: column;
+}
+
+ #rock{
+    margin-left: 60px;
+    margin-top: 50px;
+    visibility: hidden;
+}
+
+#paper{
+    margin-left: 60px;
+    margin-top: 100px;
+    visibility: hidden;
+}
+
+#scissors{
+    margin-left: 60px;
+     margin-top: 100px;
+    visibility: hidden;
+} 
+
+button{
+    text-align: center;
+     width: 100px;
+     height: 35px;
+    font-size: 32ppx;
+    font-weight: bold;
+    background-color: whitesmoke;
+    color: rgb(12, 11, 9);
+    border: solid 2px crimson;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    
+}
+button:hover{
+    background: #000;
+    color: #fff;
+}
+#start{
+    background-color: white;
+    position: absolute;
+    top: 75%;
+    left: 45%;
+}
+
+@keyframes shakeLeft {
+    0%{
+        transform: rotateY(180deg) translateY(0px);
+    }
+    50%{
+        transform: rotateY(180deg) translateY(-50px);
+    }
+    100%{
+        transform: rotateY(180deg) translateY(0px);
+    }
+}
+
+@keyframes shakeRight {
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-50px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}

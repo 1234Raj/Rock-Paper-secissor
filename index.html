@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>ROCK PAPER SCISSOR</title>
+</head>
+<body>
+    <h1 id="heading">&nbsp &nbsp ROCK &nbsp &nbsp PAPER &nbsp &nbsp SCISSOR </h1>
+    <div class="btn1">
+    <button type="button" onclick="game(0)" id="rock">ROCK</button>
+    <button type="button" onclick="game(1)" id="paper">PAPER</button>
+    <button type="button" onclick="game(2)" id="scissors">SCISSOR</button>
+    <button type="button" onclick="start()" id="start">START</button>
+</div>
+    <div id="hand1">
+        <img src="rock.png" id="img1">
+    </div>
+    <div id="hand2">
+        <img src="rock.png" id="img2">
+    </div>
+
+    <p id="winer"></p>
+
+    
+   <script>
+    function start(){
+    document.getElementById("start").style.visibility="hidden";
+    document.getElementById("rock").style.visibility="visible";
+    document.getElementById("paper").style.visibility="visible";
+    document.getElementById("scissors").style.visibility="visible";
+
+}
+
+clickedHand=["<img src='rock.png' id='img1'>","<img src='paper.png' id='img1'>","<img src='scissors.png' id='img1'>" ];
+
+clickedRightHand=["<img src='rock.png' id='img2'>","<img src='paper.png' id='img2'>","<img src='scissors.png' id='img2'>" ];
+
+function game(position){
+    document.getElementById("img1").style.animation='shakeLeft 1s 5 ease-in-out';
+    document.getElementById("img2").style.animation='shakeRight 1s 5 ease-in-out';
+
+    var random=Math.floor(Math.random()*3);
+    setTimeout(() => {
+        document.getElementById("hand2").innerHTML=clickedRightHand[random];
+        document.getElementById("hand1").innerHTML=clickedHand[position];
+    }, 5000);
+    setTimeout(() => {
+        if(random==position){
+            alert("MATCH DRAW !!");
+            window.location.reload();
+        }
+        else if(position==0 && random==2){
+            alert("YOU ARE WINNER , GOOD JOB !!");
+            window.location.reload();
+        }
+        else if(position==1 && random==0){
+            alert("YOU ARE WINNER , GOOD JOB !!");
+            window.location.reload();
+        }
+        else if(position==2 && random==1){
+            alert("YOU ARE WINNER , GOOD JOB !!");
+            window.location.reload();
+        }
+        else{
+            alert("COMPUTER IS WINNER,TRY NEXT TIME !!");
+            window.location.reload();
+        }
+    }, 5500);
+}
+   </script>
+</body>
+</html>
